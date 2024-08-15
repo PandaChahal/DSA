@@ -8,9 +8,10 @@ void indices(vector<int> arr,int target)
     int i=0,j =n-1;
     while(i!=j)
     {
-        if(arr[i]+arr[j] == target)
+        if((arr[i]+arr[j]) == target)
         {
             cout<<"indices = ["<<i<<","<<j<<"]";
+            break;
         }
         else if((arr[i]+arr[j])<target)
         {

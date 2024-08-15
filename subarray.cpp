@@ -6,26 +6,24 @@ using namespace std;
 int maxLength(vector<int> arr)
 {
     int maxlength = 0;
-    int length;
-    for(int i =0;i<arr.size();i++)
+    for(int i = 0;i<arr.size();i++)
     {
         if(arr[i] > 0)
         {
             maxlength = i;
-            length = max(maxlength,i);
         }
-        
     }
-    return length ;
+    return maxlength;
 }
 
 void subArray(vector<int> arr,int target)
 {
     int n = arr.size();
-    int sum = 0;
+    
     vector<int> hash(n+1,0);
     for(int i=0;i<n-1;i++)
     {
+        int sum = 0;
         for(int j=i+1;j<n;j++)
         {
             sum = sum + arr[j];
