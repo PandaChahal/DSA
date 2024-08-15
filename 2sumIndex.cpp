@@ -2,15 +2,17 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void indices(vector<int> arr,int target)
+vector<int> indices(vector<int> arr,int target)
 {
+    vector<int> answer ;
     int n = arr.size();
     int i=0,j =n-1;
     while(i!=j)
     {
         if((arr[i]+arr[j]) == target)
         {
-            cout<<"indices = ["<<i<<","<<j<<"]";
+            answer.push_back(i);
+            answer.push_back(j);
             break;
         }
         else if((arr[i]+arr[j])<target)
@@ -22,12 +24,16 @@ void indices(vector<int> arr,int target)
             j--;
         }
     }
+    return answer;
 }
 int main()
 {
     vector<int> arr = {2,5,6,8,11};
     int target = 14;
-    indices(arr,target);
-
+    vector<int> index = indices(arr,target);
+    for(int i =0;i<index.size();i++)
+    {
+        cout<<index[i]<<" ";
+    }
     return 0;
 }
